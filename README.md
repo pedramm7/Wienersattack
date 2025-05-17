@@ -11,6 +11,17 @@ This repository contains:
 - Detailed **explanations** of how the attack works.
 - A step-by-step **guide** to testing vulnerable RSA keys.
 
+## Enhancements & Future Improvements
+Automated weak RSA key generation for testing.
+Web interface for interactive attack demonstrations.
+Performance optimizations for handling larger RSA keys.
+
+## Disclaimer
+This project is intended solely for educational purposes to demonstrate cryptographic vulnerabilities.
+Do not use this code for malicious, illegal, or unethical purposes.
+The author takes no responsibility for misuse of this tool.
+Always follow ethical hacking practices and obtain proper authorization.
+
 ## How Wiener's Attack Works
 RSA encryption relies on the security of large prime factorization. However, when the **private exponent (d)** is too small, the fraction **e/n** (where *e* is the public exponent and *n* is the modulus) can be **well approximated** by its continued fraction expansion. This leads to a vulnerability where an attacker can recover *d*.
 
@@ -25,3 +36,8 @@ RSA encryption relies on the security of large prime factorization. However, whe
 Before running the attack, install **Jupyter Notebook** and required Python libraries:
 ```bash
 pip install jupyter sympy
+
+### Open Terminal or Command Prompt
+Run the following command:
+```bash
+jupyter notebook
