@@ -36,9 +36,16 @@ def is_perfect_square(n):
 
 # Wiener's Attack Implementation
 def wiener_attack(e, n):
+    print("\nStep 1: Continued Fraction Expansion of e/n:")
     cf = continued_fraction_expansion(e, n)
-    convs = convergents_from_cf(cf)
+    print("Continued Fraction:", cf)
 
+    print("\nStep 2: Computing Convergents:")
+    convs = convergents_from_cf(cf)
+    for i, (k, d) in enumerate(convs):
+        print(f"Convergent {i}: k = {k}, d = {d}")
+
+    print("\nStep 3: Testing convergents to find private key d...")
     for (k, d_candidate) in convs:
         if k == 0:
             continue
@@ -61,10 +68,10 @@ def wiener_attack(e, n):
             return d_candidate
     return None
 
-# Interactive Input for User Testing
+# Main function with user input
 def main():
-    print("Wiener's Attack on RSA")
-    print("----------------------")
+    print("Wiener's Attack Demonstration")
+    print("-----------------------------")
     try:
         e = int(input("Enter the RSA public exponent (e): "))
         n = int(input("Enter the RSA modulus (n): "))
@@ -82,4 +89,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
